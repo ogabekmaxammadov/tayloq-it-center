@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.max-width {
+	max-width: 1240px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.display-flex {
+	display: flex;
+	align-items: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.gap-30 {
+	gap: 30px;
+}
+
+header {
+	padding: 20px 0;
+	position: fixed;
+	background-color: #fff;
+	z-index: 5;
+	top: 0;
+	width: 100%;
+}
+
+header h1 {
+	color: #6ca6cd;
+	font-family: Poppins;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #14142b;
+	font-size: 18px;
+	font-family: Roboto;
+	font-weight: 500;
+}
+
+.btn {
+	font-size: 18px;
+	font-family: Roboto;
+	padding: 10px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.btn-primary {
+	border: 2px solid #6ca6cd;
+	color: #6ca6cd;
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+	border: 2px solid #6ca6cd;
+	color: #fff;
+	background-color: #6ca6cd;
+}
+
+.btn-secondary {
+	border: 2px solid #6ca6cd;
+	color: #fff;
+	background-color: #6ca6cd;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+	border: 2px solid #6ca6cd;
+	color: #6ca6cd;
+	background-color: transparent;
+}
+
+.color-blue {
+	color: #6ca6cd;
+}
+
+.direction-column {
+	flex-direction: column;
+}
+
+.color-white {
+	color: #fff;
+}
+
+.main-section {
+	background-image: url('https://media.istockphoto.com/id/514321315/photo/diversity-that-makes-the-team-work.jpg?s=612x612&w=0&k=20&c=1Nf_npFRbhGCcJpVN6bbAiuIhFs5IYVflbah1Kk0w0M=');
+	height: 90vh;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	object-fit: cover;
+	background-attachment: fixed;
+	margin-top: 90px;
+}
+
+.main-section::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 90%;
+	background: rgba(0, 0, 0, 0.5); /* Qoraroq fon */
+	z-index: 0; /* Matndan orqada */
+	backdrop-filter: blur(3px);
+}
+
+.main-inform {
+	position: relative;
+	z-index: 1;
+	margin: auto;
+	text-align: center;
+}
+
+.main-inform h2 {
+	font-size: 64px;
+	font-family: Raleway;
+}
+
+.main-inform p {
+	font-size: 20px;
+	font-family: Raleway;
+	color: #fff;
+}
+
+.second-section {
+	padding-top: 50px;
+}
+
+.second-section h3 {
+	font-size: 16px;
+	font-family: Raleway;
+	margin-bottom: 20px;
+}
+
+.second-section h2 {
+	color: black;
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.second-section p {
+	color: #4e4b66;
+	font-size: 18px;
+	font-family: Regular;
+}
+
+.third-section {
+	text-align: center;
+	padding: 80px 0;
+}
+
+.third-section h1 {
+	font-size: 44px;
+	font-family: Raleway;
+	font-weight: bold;
+}
+
+.third-section h1 span {
+	color: #6ca6cd;
+}
+
+.third-section h3 {
+	color: #383838;
+	font-size: 20px;
+	font-family: Regular;
+	font-weight: 300;
+	margin-top: 15px;
+}
+
+.third-inform {
+	gap: 8%;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.inform-item {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	align-items: center;
+}
+
+.icon {
+	width: 50px;
+	height: 50px;
+	color: #6ca6cd;
+}
+
+.inform-item h2 {
+	font-size: 24px;
+	font-family: Raleway;
+	font-weight: 500;
+	margin: 15px 0;
+	color: #6ca6cd;
+}
+
+.inform-item h4 {
+	color: #262338;
+	font-size: 16px;
+	font-family: Regular;
+	font-weight: 300;
+}
+
+.rec-courses {
+	padding: 80px 0;
+	background-color: #eff4f8;
+}
+
+.rec-courses-inform {
+	width: 70%;
+	background-color: #eff4f8;
+}
+
+.dek {
+	background-color: transparent;
+}
+
+.rec-courses-inform h1 {
+	font-size: 64px;
+}
+.rec-courses-inform h1 span {
+	color: #6ca6cd;
+}
+
+.rec-courses-inform p {
+	font-size: 20px;
+	font-family: Reagular;
+	color: #4e4b66;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.rec-imgs {
+	padding-left: 40px;
+	width: 100%;
+}
+
+.rec-img1 {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI6st963Lv7fOO1eqGIWSKc3fjV-yMAQHaiw&s');
+	width: 100%;
+	height: 240px;
+}
+
+.rec-img2-3 {
+	gap: 20px;
+	margin-top: 30px;
+	width: 100%;
+}
+
+.rec-img2 {
+	background-image: url('https://jaro-website.s3.ap-south-1.amazonaws.com/2024/08/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg');
+	height: 240px;
+	width: 70%;
+}
+
+.rec-img3 {
+	background-image: url('https://learn.g2.com/hubfs/iStock-1191609321%20%281%29.jpg');
+	height: 240px;
+	width: 70%;
+}
+
+.imgg {
+	background-position: center;
+	background-size: cover;
+	object-fit: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-size 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.imgg:hover {
+	background-size: 110%;
+}
+
+.imgg::after {
+	content: '';
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 10px;
+}
+
+.imgg .rec-img {
+	z-index: 1001;
+	position: relative;
+}
+
+.rec-img .iconn {
+	width: 64px;
+	height: 64px;
+	color: #fff;
+}
+
+.rec-img h1 {
+	color: #fff;
+	font-size: 48px;
+	font-family: Regular;
+	font-weight: 500;
+}
+
+@media (max-width: 767px) {
+	.max-width {
+		max-width: 767px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	nav {
+		display: none;
+	}
+
+	.btn {
+		font-size: 14px;
+	}
+
+	.contact-btn-nav {
+		display: none;
+	}
+
+	.main-inform h2 {
+		font-size: 36px;
+	}
+
+	.main-inform p {
+		font-size: 16px;
+		margin-top: 20px;
+	}
+
+	.second-section {
+		flex-direction: column-reverse;
+		text-align: center;
+	}
+
+	.second-inform h3 {
+		font-size: 27px;
+		margin-top: 20px;
+	}
+
+	.second-inform h2 {
+		font-size: 37px;
+	}
+
+	.second-inform p {
+		font-size: 16px;
+	}
+
+	.third-section h1 {
+		font-size: 37px;
+	}
+
+	.third-section h3 {
+		font-size: 18px;
+	}
+
+	.third-inform {
+		flex-direction: column-reverse;
+		gap: 30px;
+	}
+
+	.inform-item {
+		width: 95%;
+		gap: 10px;
+		border: 1px solid #6ca6cd;
+		padding: 30px 20px;
+		border-radius: 12px;
+		background-color: #e4e1e1;
+	}
+
+	.inform-item h2 {
+		margin: 5px 0;
+	}
+
+	.dek {
+		flex-direction: column-reverse;
+	}
+
+	.rec-courses-inform {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.rec-courses-inform h1 {
+		font-size: 37px;
+		margin-top: 20px;
+	}
+
+	.rec-courses-inform p {
+		font-size: 17px;
+	}
+
+	.rec-imgs {
+		padding: 0;
+	}
+
+	.rec-img2-3 {
+		flex-direction: column;
+	}
+
+	.rec-img2,
+	.rec-img3 {
+		width: 100%;
+	}
+}
