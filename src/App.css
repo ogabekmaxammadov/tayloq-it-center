@@ -371,6 +371,7 @@ a {
 	.second-section {
 		flex-direction: column-reverse;
 		text-align: center;
+		padding: 0;
 	}
 
 	.second-inform h3 {
@@ -384,6 +385,16 @@ a {
 
 	.second-inform p {
 		font-size: 16px;
+	}
+
+	.second-section .second-img {
+		width: 100%;
+		margin-left: 0;
+		padding: 0;
+	}
+
+	.second-img img {
+		width: 100%;
 	}
 
 	.third-section h1 {
