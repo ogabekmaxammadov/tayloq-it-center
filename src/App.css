@@ -114,6 +114,7 @@ a {
 	object-fit: cover;
 	background-attachment: fixed;
 	margin-top: 90px;
+	position: relative;
 }
 
 .main-section::before {
@@ -345,6 +346,11 @@ a {
 		display: none;
 	}
 
+	.main-section::before {
+		height: 100%;
+		top: 0px;
+	}
+
 	.btn {
 		font-size: 14px;
 	}
@@ -407,7 +413,12 @@ a {
 	}
 
 	.dek {
-		flex-direction: column-reverse;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.rec-courses {
+		padding: 30px 0;
 	}
 
 	.rec-courses-inform {
@@ -417,7 +428,6 @@ a {
 
 	.rec-courses-inform h1 {
 		font-size: 37px;
-		margin-top: 20px;
 	}
 
 	.rec-courses-inform p {
