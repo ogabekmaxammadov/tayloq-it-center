@@ -22,6 +22,14 @@ body::-webkit-scrollbar {
 	align-items: center;
 }
 
+.gap-70 {
+	gap: 70px;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
 .space-between {
 	justify-content: space-between;
 }
@@ -467,5 +475,121 @@ a {
 	.iconn {
 		width: 55px;
 		height: 55px;
+	}
+}
+
+.form-section {
+	padding: 100px 0;
+}
+
+.form-section form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.form-section form h2 {
+	font-size: 36px;
+	font-family: Regular;
+	font-weight: 600;
+	color: #262338;
+}
+.form-section form h2 span {
+	color: #6ca6cd;
+}
+.form-section form h4 {
+	font-size: 14px;
+	font-family: Regular;
+	color: #262338;
+	font-weight: 400;
+}
+
+.form-section form input {
+	padding: 15px 10px;
+	width: 390px;
+	outline: none;
+	border: 3px solid #6ca6cd;
+	border-radius: 12px;
+}
+
+.form-section form textarea {
+	height: 100px;
+	padding: 10px;
+	outline: none;
+	resize: none;
+	width: 390px;
+	border: 3px solid #6ca6cd;
+	border-radius: 12px;
+}
+
+.form-section form button {
+	cursor: pointer;
+	font-size: 16px;
+	font-family: 'Courier New', Courier, monospace;
+	padding: 15px;
+	border-radius: 12px;
+	border: 2px solid #6ca6cd;
+	color: #6ca6cd;
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
+	font-weight: 600;
+}
+
+.form-section form button:hover {
+	background-color: #6ca6cd;
+	color: #fff;
+}
+
+.location {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.loc {
+	display: flex;
+	gap: 10px;
+}
+
+.loc h3 {
+	font-size: 16px;
+	font-family: Regular;
+	color: #262338;
+	font-weight: 600;
+}
+
+.iconn {
+	color: rgb(118, 176, 6);
+	width: 28px;
+	height: 28px;
+}
+
+@media (max-width: 767px) {
+	.form-section {
+		flex-direction: column;
+		padding: 80px 20px;
+	}
+
+	.form-section form {
+		width: 90%;
+		margin-left: -5%;
+		justify-content: space-between;
+	}
+
+	.form-section form input {
+		width: 100%;
+	}
+
+	.form-section form textarea {
+		width: 100%;
+	}
+
+	.form-section form button {
+		width: 100%;
+		margin-left: 5%;
+	}
+
+	.location iframe {
+		width: 100%;
 	}
 }

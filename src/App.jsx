@@ -1,7 +1,9 @@
 import { FaReact } from 'react-icons/fa'
+import { FiPhone } from 'react-icons/fi'
 import { GrDocumentCsv } from 'react-icons/gr'
-import { IoBagCheckOutline } from 'react-icons/io5'
+import { IoBagCheckOutline, IoLocationOutline } from 'react-icons/io5'
 import { LuUserRoundCheck } from 'react-icons/lu'
+import { MdOutlineLocalPostOffice } from 'react-icons/md'
 import { RiFileWord2Line } from 'react-icons/ri'
 import { SiInteractiondesignfoundation } from 'react-icons/si'
 import './App.css'
@@ -152,6 +154,49 @@ function App() {
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+				</section>
+
+				<section className='form-section display-flex gap-70 justify-center'>
+					<form action=''>
+						<h2>
+							Biz bilan <span>Bog'laning</span>
+						</h2>
+						<h4>Habaringizni shu yerda qoldirishingiz mumkin</h4>
+						<input type='text' placeholder='Ismingiz' />
+						<input type='email' placeholder='Email manzilingiz' />
+						<input type='tel' placeholder='Telefon raqamingiz' />
+						<textarea
+							type='textearea'
+							placeholder='Xabarni shu yerga kiriting '
+							className='textarea'
+						/>
+						<button type='submit'>Xabarni yuborish</button>
+					</form>
+					<div className='location'>
+						<iframe
+							src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3074.157431633931!2d67.0953203203993!3d39.60113590681977!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d27bc95e618d9%3A0x249e817cd1e91765!2sYoshlar%20ishlari%20agentligi%20Toyloq%20tuman%20bo%E2%80%98limi!5e0!3m2!1sru!2s!4v1755275198872!5m2!1sru!2s'
+							width='500'
+							height='350'
+							style={{ border: '3px solid #6ca6cd' }}
+							allowFullScreen
+							loading='lazy'
+							referrerPolicy='no-referrer-when-downgrade'
+						></iframe>
+						<div className='loc display-flex'>
+							<IoLocationOutline className='iconn' />
+							<h3>Samarqand, Tayloq tumani</h3>
+						</div>
+
+						<div className='loc display-flex'>
+							<FiPhone className='iconn' />
+							<h3>+998 94 0424257</h3>
+						</div>
+
+						<div className='loc display-flex'>
+							<MdOutlineLocalPostOffice className='iconn' />
+							<h3>tayloqItCenter@gmail.com</h3>
 						</div>
 					</div>
 				</section>
