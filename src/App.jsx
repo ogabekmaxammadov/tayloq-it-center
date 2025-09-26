@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { FaReact } from 'react-icons/fa'
 import { FiPhone } from 'react-icons/fi'
 import { GrDocumentCsv } from 'react-icons/gr'
+import { IoMdCloseCircleOutline } from 'react-icons/io'
 import { IoBagCheckOutline, IoLocationOutline } from 'react-icons/io5'
 import { LuUserRoundCheck } from 'react-icons/lu'
 import { MdOutlineLocalPostOffice } from 'react-icons/md'
@@ -9,6 +11,55 @@ import { SiInteractiondesignfoundation } from 'react-icons/si'
 import './App.css'
 
 function App() {
+	const [modal, setModal] = useState(false)
+
+	const [register, setRegister] = useState({
+		name: '',
+		phone: '',
+		course: '',
+	})
+
+	const handleChange = e => {
+		setRegister({ ...register, [e.target.name]: e.target.value })
+	}
+
+	const handleSubmit = e => {
+		e.preventDefault()
+		setModal(false)
+
+		const token = '8258865994:AAFEQ-88jW-0vLZ2dIL-o5jgP9Evax9fZPc'
+
+		const chatId = '7261954555'
+		const message = `
+				📝Yangi malumotlar! 
+				👤Ism: ${register.name}
+				📞Telefon: ${register.phone}
+				📓Kurs: ${register.course}
+				`
+		fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				chat_id: chatId,
+				text: message,
+				parse_mode: 'HTML',
+			}),
+		})
+			.then(res => {
+				if (res.ok) {
+					alert('Malumotlaringiz yuborildi! ✅')
+					setRegister({ name: '', phone: '', course: '' })
+				} else {
+					alert("Xatolik yuz berdi! ❌. Iltimos, qayta urinib ko'ring.")
+				}
+			})
+			.catch(err => {
+				console.error('Xatolik yuz berdi:', err)
+			})
+	}
+
 	return (
 		<>
 			<div className='home-section'>
@@ -18,7 +69,7 @@ function App() {
 						<nav>
 							<ul className='display-flex gap-30'>
 								<li>
-									<a href=''>Home</a>
+									<a href=''>Bosh Sahifa</a>
 								</li>
 								<li>
 									<a href=''>Kurslar</a>
@@ -32,10 +83,17 @@ function App() {
 							</ul>
 						</nav>
 						<div className='head-btns display-flex gap-30'>
-							<button className='btn-primary btn contact-btn-nav'>
+							<a href='#contact' className='btn-primary btn contact-btn-nav'>
 								Bog'lanish
+							</a>
+							<button
+								className='btn-secondary btn'
+								onClick={() => {
+									setModal(true)
+								}}
+							>
+								Ro'yxatdan o'tish
 							</button>
-							<button className='btn-secondary btn'>Ro'yxatdan o'tish</button>
 						</div>
 					</div>
 				</header>
@@ -158,7 +216,10 @@ function App() {
 					</div>
 				</section>
 
-				<section className='form-section display-flex gap-70 justify-center'>
+				<section
+					className='form-section display-flex gap-70 justify-center'
+					id='contact'
+				>
 					<form action=''>
 						<h2>
 							Biz bilan <span>Bog'laning</span>
@@ -200,6 +261,83 @@ function App() {
 						</div>
 					</div>
 				</section>
+
+				{/* <footer className='footer-section'>
+					<div className='max-width display-flex'>
+						<div className='name-shior'>
+							<h2>Tayloq It Center</h2>
+							<h3>Bu yerda qandaydur shior bolishi kerak</h3>
+						</div>
+						<div className='quick-links'>
+							<h2>Sahifalar</h2>
+							<ul>
+								<li>Bosh Sahifa</li>
+								<li>Kurslar</li>
+								<li>Blog</li>
+								<li>Ustozlar</li>
+								<li>Kontaktlar</li>
+							</ul>
+						</div>
+						<div className='contact'>
+							<h2>Bog'lanish</h2>
+							<div className='contact-item'>
+								<h2>tayloqItCenter@gmail.com</h2>
+								<h2>+998 94 0424257</h2>
+							</div>
+						</div>
+					</div>
+				</footer> */}
+
+				{modal && (
+					<div className='regis'>
+						<div className='back' onClick={() => setModal(false)}></div>
+						<div className='registration' onSubmit={handleSubmit}>
+							<h3 onClick={() => setModal(false)} className='close'>
+								<IoMdCloseCircleOutline />
+							</h3>
+							<h2>
+								Hozir ro'yxatdan o'ting va o'z kelajagingizni shakllantiring!
+							</h2>
+							<input
+								type='text'
+								placeholder='Ismingiz'
+								required
+								name='name'
+								value={register.name}
+								onChange={handleChange}
+							/>
+							<input
+								type='tel'
+								placeholder='Telefon raqamingiz'
+								required
+								name='phone'
+								value={register.phone}
+								onChange={handleChange}
+							/>
+							<select
+								name='course'
+								id='select'
+								placeholder='Kursni tanlang'
+								required
+								value={register.course}
+								onChange={handleChange}
+							>
+								<option value='Kompyuter Savodxonligi'>
+									Kompyuter Savodxonligi
+								</option>
+								<option value='Dasturlash'>Dasturlash</option>
+								<option value='Grafik Dizayn'>Grafik Dizayn</option>
+							</select>
+							<button
+								type='submit'
+								className='btn-secondary btn'
+								onClick={handleSubmit}
+							>
+								Ro'yxatdan o'tish
+							</button>
+						</div>
+					</div>
+				)}
 			</div>
 		</>
 	)
