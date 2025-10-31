@@ -1,0 +1,57 @@
+.courses-page {
+	margin-top: 150px;
+}
+
+.courses-inform h1 {
+	color: limegreen;
+	font-size: 40px;
+	text-align: center;
+	font-family: Raleway;
+}
+
+.courses {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+
+.course {
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.course-image {
+	width: 100%;
+}
+
+.course-image img {
+	width: 100%;
+}
+
+.course-info {
+	padding: 20px;
+	position: relative;
+}
+
+.course-info h2 {
+	font-size: 32px;
+	font-family: Raleway;
+	margin-bottom: 10px;
+	color: limegreen;
+}
+
+.course-info p {
+	font-size: 18px;
+	font-family: Raleway;
+	color: #4e4b66;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+	.courses {
+		grid-template-columns: 1fr;
+	}
+}
