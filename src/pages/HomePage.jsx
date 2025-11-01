@@ -8,6 +8,7 @@ import { RiFileWord2Line } from 'react-icons/ri'
 import { SiInteractiondesignfoundation } from 'react-icons/si'
 import { Link } from 'react-router'
 import '../App.css'
+import FooterSection from '../components/FooterSection'
 
 const HomePage = () => {
 	return (
@@ -150,7 +151,9 @@ const HomePage = () => {
 							placeholder='Xabarni shu yerga kiriting '
 							className='textarea'
 						/>
-						<button type='submit'>Xabarni yuborish</button>
+						<button type='submit ' className='btn-secondary'>
+							Xabarni yuborish
+						</button>
 					</form>
 					<div className='location'>
 						<iframe
@@ -179,31 +182,7 @@ const HomePage = () => {
 					</div>
 				</section>
 
-				{/* <footer className='footer-section'>
-						<div className='max-width display-flex'>
-							<div className='name-shior'>
-								<h2>Tayloq It Center</h2>
-								<h3>Bu yerda qandaydur shior bolishi kerak</h3>
-							</div>
-							<div className='quick-links'>
-								<h2>Sahifalar</h2>
-								<ul>
-									<li>Bosh Sahifa</li>
-									<li>Kurslar</li>
-									<li>Blog</li>
-									<li>Ustozlar</li>
-									<li>Kontaktlar</li>
-								</ul>
-							</div>
-							<div className='contact'>
-								<h2>Bog'lanish</h2>
-								<div className='contact-item'>
-									<h2>tayloqItCenter@gmail.com</h2>
-									<h2>+998 94 0424257</h2>
-								</div>
-							</div>
-						</div>
-					</footer> */}
+				<FooterSection />
 			</div>
 		</>
 	)

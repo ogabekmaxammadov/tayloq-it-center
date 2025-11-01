@@ -528,10 +528,7 @@ a {
 	font-size: 16px;
 	font-family: 'Courier New', Courier, monospace;
 	padding: 15px;
-	border-radius: 12px;
-	border: 2px solid limegreen;
-	color: limegreen;
-	background-color: transparent;
+	border-radius: 8px;
 	transition: all 0.3s ease-in-out;
 	font-weight: 600;
 }
@@ -593,10 +590,6 @@ a {
 	.location iframe {
 		width: 100%;
 	}
-}
-
-.footer-section .max-width {
-	justify-content: space-between;
 }
 
 .registration {
@@ -678,4 +671,13 @@ a {
 		font-size: 22px;
 		color: limegreen;
 	}
+}
+
+.footer-section {
+	background-color: limegreen;
+}
+
+.footer-section .max-width {
+	background: transparent;
+	padding: 30px;
 }

@@ -13,14 +13,26 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 30px;
-	margin-top: 100px;
-	margin-bottom: 50px;
+	background: transparent;
 }
 
 .course {
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 	border-radius: 10px;
 	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	background-color: aliceblue;
+}
+
+.courses-w {
+	background-color: rgb(222, 240, 222);
+	padding: 100px 0;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+
+.course:hover {
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.9);
 }
 
 .course-image {
@@ -50,8 +62,18 @@
 	margin-bottom: 10px;
 }
 
+.courses-w .btn-secondary {
+	margin: 50px 35% 0px 40%;
+	width: 160px;
+}
+
 @media (max-width: 767px) {
 	.courses {
 		grid-template-columns: 1fr;
+	}
+
+	.courses-w .btn-secondary {
+		margin-left: 30%;
+		width: 160px;
 	}
 }

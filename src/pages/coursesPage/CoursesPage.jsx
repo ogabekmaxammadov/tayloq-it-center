@@ -1,7 +1,9 @@
 import '../../App.css'
+import { useModal } from '../../components/ModalContext'
 import './coursesPage.css'
 
 const CoursesPage = () => {
+	const { modalOpen, setModalOpen } = useModal(false)
 	const courses = [
 		{
 			id: 1,
@@ -41,23 +43,33 @@ const CoursesPage = () => {
 		},
 	]
 	return (
-		<div className='courses-page max-width'>
+		<div className='courses-page '>
 			<div className='courses-inform'>
 				<h1>Kurslarimiz bilan tanishing</h1>
-				<div className='courses'>
-					{courses.map(course => (
-						<div className='course'>
-							<div className='course-image'>
-								<img src={course.img} alt='' />
-							</div>
-							<div className='course-info'>
-								<h2>{course.title}</h2>
-								<p>{course.description}</p>
+				<div className='courses-w'>
+					<div className='courses max-width'>
+						{courses.map(course => (
+							<div className='course'>
+								<div className='course-image'>
+									<img src={course.img} alt='' />
+								</div>
+								<div className='course-info'>
+									<h2>{course.title}</h2>
+									<p>{course.description}</p>
 
-								<button className='btn btn-primary btnn'>Ko'proq o'qish</button>
+									<button className='btn btn-primary btnn'>
+										Ko'proq o'qish
+									</button>
+								</div>
 							</div>
-						</div>
-					))}
+						))}
+					</div>
+					<button
+						className=' btn btn-secondary'
+						onClick={() => setModalOpen(true)}
+					>
+						Ro'yxatdan o'tish
+					</button>
 				</div>
 			</div>
 		</div>
